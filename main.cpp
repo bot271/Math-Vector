@@ -10,6 +10,7 @@
 
 int main()
 {
+    using namespace MVECTOR;
     MVector v1 = MVector(3, 4);
     MVector v2;
     v2.Reset(4.0 / 5, -3.0 / 5);
