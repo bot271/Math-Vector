@@ -10,21 +10,25 @@
 #include <iostream>
 #include <cmath>
 
-class MVector
+
+namespace MVECTOR
 {
-private:
-    double x_;
-    double y_;
-public:
-    MVector(double x = 0, double y = 0);
-    ~MVector();
-    void Reset(const double, const double);
-    MVector operator+(const MVector &) const;
-    MVector operator*(const double) const;
-    double operator*(const MVector &) const;
-    friend MVector operator*(const double a, const MVector & v) { return v * a; }
-    double norm() const;
-    friend std::ostream & operator<<(std::ostream &, const MVector &);
-};
+    class MVector
+    {
+    private:
+        double x_;
+        double y_;
+    public:
+        MVector(double x = 0, double y = 0);
+        ~MVector();
+        void Reset(const double, const double);
+        MVector operator+(const MVector &) const;
+        MVector operator*(const double) const;
+        double operator*(const MVector &) const;
+        friend MVector operator*(const double a, const MVector & v) { return v * a; }
+        double norm() const;
+        friend std::ostream & operator<<(std::ostream &, const MVector &);
+    };
+}
 
 #endif
